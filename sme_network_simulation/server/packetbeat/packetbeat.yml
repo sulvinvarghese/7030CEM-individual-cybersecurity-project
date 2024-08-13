@@ -1,0 +1,15 @@
+packetbeat.interfaces.device: any
+
+packetbeat.flows:
+  enabled: false
+
+packetbeat.protocols:
+- type: icmp
+  enabled: true
+
+output.elasticsearch:
+  hosts: ["http://server_elasticsearch:9200"]
+  index: "packetbeat-%{+yyyy.MM.dd}"
+
+setup.template.name: "packetbeat"
+setup.template.pattern: "packetbeat-*"

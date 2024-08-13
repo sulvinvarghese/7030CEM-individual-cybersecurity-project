@@ -1,0 +1,82 @@
+[
+    {
+        "app_id": 1,
+        "name": "Microsoft Word"
+    },
+    {
+        "app_id": 2,
+        "name": "Microsoft Excel"
+    },
+    {
+        "app_id": 3,
+        "name": "Microsoft PowerPoint"
+    },
+    {
+        "app_id": 4,
+        "name": "Microsoft Outlook"
+    },
+    {
+        "app_id": 5,
+        "name": "Google Chrome"
+    },
+    {
+        "app_id": 6,
+        "name": "Mozilla Firefox"
+    },
+    {
+        "app_id": 7,
+        "name": "Adobe Acrobat Reader"
+    },
+    {
+        "app_id": 8,
+        "name": "Slack"
+    },
+    {
+        "app_id": 9,
+        "name": "Zoom"
+    },
+    {
+        "app_id": 10,
+        "name": "Visual Studio Code"
+    },
+    {
+        "app_id": 11,
+        "name": "IntelliJ IDEA"
+    },
+    {
+        "app_id": 12,
+        "name": "PyCharm"
+    },
+    {
+        "app_id": 13,
+        "name": "Jupyter Notebook"
+    },
+    {
+        "app_id": 14,
+        "name": "Git"
+    },
+    {
+        "app_id": 15,
+        "name": "Docker"
+    },
+    {
+        "app_id": 16,
+        "name": "LibreOffice Writer"
+    },
+    {
+        "app_id": 17,
+        "name": "LibreOffice Calc"
+    },
+    {
+        "app_id": 18,
+        "name": "LibreOffice Impress"
+    },
+    {
+        "app_id": 19,
+        "name": "VLC Media Player"
+    },
+    {
+        "app_id": 20,
+        "name": "Spotify"
+    }
+]

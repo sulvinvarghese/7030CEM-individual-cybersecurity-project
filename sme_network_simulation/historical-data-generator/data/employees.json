@@ -1,0 +1,132 @@
+[
+    {
+        "username": "alice",
+        "employee_id": "1001",
+        "name": "Alice Johnson",
+        "department": "Engineering",
+        "role": "Software Engineer",
+        "email": "alice@company.com",
+        "personal_email": "alice.johnson@gmail.com",
+        "malicious": false
+    },
+    {
+        "username": "bob",
+        "employee_id": "1002",
+        "name": "Bob Smith",
+        "department": "Sales",
+        "role": "Sales Manager",
+        "email": "bob@company.com",
+        "personal_email": "bob.smith@yahoo.com",
+        "malicious": false
+    },
+    {
+        "username": "carol",
+        "employee_id": "1003",
+        "name": "Carol White",
+        "department": "HR",
+        "role": "HR Manager",
+        "email": "carol@company.com",
+        "personal_email": "carol.white@outlook.com",
+        "malicious": false
+    },
+    {
+        "username": "dave",
+        "employee_id": "1004",
+        "name": "Dave Brown",
+        "department": "Finance",
+        "role": "Financial Analyst",
+        "email": "dave@company.com",
+        "personal_email": "dave.brown@hotmail.com",
+        "malicious": false
+    },
+    {
+        "username": "eve",
+        "employee_id": "1005",
+        "name": "Eve Davis",
+        "department": "Marketing",
+        "role": "Marketing Specialist",
+        "email": "eve@company.com",
+        "personal_email": "eve.davis@icloud.com",
+        "malicious": false
+    },
+    {
+        "username": "frank",
+        "employee_id": "1006",
+        "name": "Frank Miller",
+        "department": "Engineering",
+        "role": "Software Engineer",
+        "email": "frank@company.com",
+        "personal_email": "frank.miller@gmail.com",
+        "malicious": false
+    },
+    {
+        "username": "grace",
+        "employee_id": "1007",
+        "name": "Grace Lee",
+        "department": "Sales",
+        "role": "Sales Manager",
+        "email": "grace@company.com",
+        "personal_email": "grace.lee@yahoo.com",
+        "malicious": false
+    },
+    {
+        "username": "hank",
+        "employee_id": "1008",
+        "name": "Hank Green",
+        "department": "HR",
+        "role": "HR Manager",
+        "email": "hank@company.com",
+        "personal_email": "hank.green@outlook.com",
+        "malicious": false
+    },
+    {
+        "username": "ivy",
+        "employee_id": "1009",
+        "name": "Ivy Scott",
+        "department": "Finance",
+        "role": "Financial Analyst",
+        "email": "ivy@company.com",
+        "personal_email": "ivy.scott@hotmail.com",
+        "malicious": false
+    },
+    {
+        "username": "jack",
+        "employee_id": "1010",
+        "name": "Jack Brown",
+        "department": "Marketing",
+        "role": "Marketing Specialist",
+        "email": "jack@company.com",
+        "personal_email": "jack.brown@icloud.com",
+        "malicious": false
+    },
+    {
+        "username": "john.doe",
+        "employee_id": "9001",
+        "name": "John Doe",
+        "department": "IT",
+        "role": "IT Support",
+        "email": "john.doe@company.com",
+        "personal_email": "john.doe@gmail.com",
+        "malicious": true
+    },
+    {
+        "username": "jane.smith",
+        "employee_id": "9002",
+        "name": "Jane Smith",
+        "department": "IT",
+        "role": "Network Administrator",
+        "email": "jane.smith@company.com",
+        "personal_email": "jane.smith@yahoo.com",
+        "malicious": true
+    },
+    {
+        "username": "robert.brown",
+        "employee_id": "9003",
+        "name": "Robert Brown",
+        "department": "IT",
+        "role": "System Administrator",
+        "email": "robert.brown@company.com",
+        "personal_email": "robert.brown@outlook.com",
+        "malicious": true
+    }
+]

@@ -1,0 +1,2 @@
+FROM wazuh/wazuh-manager:4.3.10
+

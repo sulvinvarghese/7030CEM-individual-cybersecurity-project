@@ -1,0 +1,951 @@
+File: sme_network_simulation\historical-data-generator\docker-compose.historical.yml
+====================================================================================
+
+version: '3.7'
+
+services:
+  historical-data-generator:
+    build: .
+    container_name: historical-data-generator
+    volumes:
+      - historical-data:/mnt/data
+    networks:
+      - sme_network
+
+networks:
+  sme_network:
+    external: true
+
+volumes:
+  historical-data:
+    external: true
+
+
+
+Page 1
+----------------------------------------
+File: sme_network_simulation\historical-data-generator\data\applications.json
+=============================================================================
+
+[
+    {
+        "app_id": 1,
+        "name": "Microsoft Word"
+    },
+    {
+        "app_id": 2,
+        "name": "Microsoft Excel"
+    },
+    {
+        "app_id": 3,
+        "name": "Microsoft PowerPoint"
+    },
+    {
+        "app_id": 4,
+        "name": "Microsoft Outlook"
+    },
+    {
+        "app_id": 5,
+        "name": "Google Chrome"
+    },
+    {
+        "app_id": 6,
+        "name": "Mozilla Firefox"
+    },
+    {
+        "app_id": 7,
+        "name": "Adobe Acrobat Reader"
+    },
+    {
+        "app_id": 8,
+        "name": "Slack"
+    },
+    {
+        "app_id": 9,
+        "name": "Zoom"
+    },
+    {
+        "app_id": 10,
+        "name": "Visual Studio Code"
+    },
+    {
+        "app_id": 11,
+        "name": "IntelliJ IDEA"
+    },
+    {
+        "app_id": 12,
+        "name": "PyCharm"
+    },
+    {
+        "app_id": 13,
+        "name": "Jupyter Notebook"
+    },
+    {
+        "app_id": 14,
+        "name": "Git"
+    },
+    {
+        "app_id": 15,
+        "name": "Docker"
+    },
+    {
+        "app_id": 16,
+        "name": "LibreOffice Writer"
+    },
+    {
+        "app_id": 17,
+        "name": "LibreOffice Calc"
+    },
+    {
+        "app_id": 18,
+        "name": "LibreOffice Impress"
+    },
+    {
+        "app_id": 19,
+        "name": "VLC Media Player"
+    },
+    {
+        "app_id": 20,
+        "name": "Spotify"
+    }
+]
+
+
+
+Page 2
+----------------------------------------
+File: sme_network_simulation\historical-data-generator\data\credentials.json
+============================================================================
+
+[
+    {
+        "username": "alice",
+        "password": "password123"
+    },
+    {
+        "username": "bob",
+        "password": "password123"
+    },
+    {
+        "username": "carol",
+        "password": "password123"
+    },
+    {
+        "username": "dave",
+        "password": "password123"
+    },
+    {
+        "username": "eve",
+        "password": "password123"
+    },
+    {
+        "username": "frank",
+        "password": "password123"
+    },
+    {
+        "username": "grace",
+        "password": "password123"
+    },
+    {
+        "username": "hank",
+        "password": "password123"
+    },
+    {
+        "username": "ivy",
+        "password": "password123"
+    },
+    {
+        "username": "jack",
+        "password": "password123"
+    },
+    {
+        "username": "john.doe",
+        "password": "malicious123"
+    },
+    {
+        "username": "jane.smith",
+        "password": "malicious123"
+    },
+    {
+        "username": "robert.brown",
+        "password": "malicious123"
+    }
+]
+
+
+
+Page 3
+----------------------------------------
+File: sme_network_simulation\historical-data-generator\data\employees.json
+==========================================================================
+
+[
+    {
+        "username": "alice",
+        "employee_id": "1001",
+        "name": "Alice Johnson",
+        "department": "Engineering",
+        "role": "Software Engineer",
+        "email": "alice@company.com",
+        "personal_email": "alice.johnson@gmail.com",
+        "malicious": false
+    },
+    {
+        "username": "bob",
+        "employee_id": "1002",
+        "name": "Bob Smith",
+        "department": "Sales",
+        "role": "Sales Manager",
+        "email": "bob@company.com",
+        "personal_email": "bob.smith@yahoo.com",
+        "malicious": false
+    },
+    {
+        "username": "carol",
+        "employee_id": "1003",
+        "name": "Carol White",
+        "department": "HR",
+        "role": "HR Manager",
+        "email": "carol@company.com",
+        "personal_email": "carol.white@outlook.com",
+        "malicious": false
+    },
+    {
+        "username": "dave",
+        "employee_id": "1004",
+        "name": "Dave Brown",
+        "department": "Finance",
+        "role": "Financial Analyst",
+        "email": "dave@company.com",
+        "personal_email": "dave.brown@hotmail.com",
+        "malicious": false
+    },
+    {
+        "username": "eve",
+        "employee_id": "1005",
+        "name": "Eve Davis",
+        "department": "Marketing",
+        "role": "Marketing Specialist",
+        "email": "eve@company.com",
+        "personal_email": "eve.davis@icloud.com",
+        "malicious": false
+    },
+    {
+        "username": "frank",
+        "employee_id": "1006",
+        "name": "Frank Miller",
+        "department": "Engineering",
+        "role": "Software Engineer",
+        "email": "frank@company.com",
+        "personal_email": "frank.miller@gmail.com",
+        "malicious": false
+    },
+    {
+        "username": "grace",
+        "employee_id": "1007",
+        "name": "Grace Lee",
+        "department": "Sales",
+        "role": "Sales Manager",
+        "email": "grace@company.com",
+        "personal_email": "grace.lee@yahoo.com",
+        "malicious": false
+    },
+    {
+        "username": "hank",
+        "employee_id": "1008",
+        "name": "Hank Green",
+        "department": "HR",
+        "role": "HR Manager",
+        "email": "hank@company.com",
+        "personal_email": "hank.green@outlook.com",
+        "malicious": false
+    },
+    {
+        "username": "ivy",
+        "employee_id": "1009",
+        "name": "Ivy Scott",
+        "department": "Finance",
+        "role": "Financial Analyst",
+        "email": "ivy@company.com",
+        "personal_email": "ivy.scott@hotmail.com",
+        "malicious": false
+    },
+    {
+        "username": "jack",
+        "employee_id": "1010",
+        "name": "Jack Brown",
+        "department": "Marketing",
+        "role": "Marketing Specialist",
+        "email": "jack@company.com",
+        "personal_email": "jack.brown@icloud.com",
+        "malicious": false
+    },
+    {
+        "username": "john.doe",
+        "employee_id": "9001",
+        "name": "John Doe",
+        "department": "IT",
+        "role": "IT Support",
+        "email": "john.doe@company.com",
+        "personal_email": "john.doe@gmail.com",
+        "malicious": true
+    },
+    {
+        "username": "jane.smith",
+        "employee_id": "9002",
+        "name": "Jane Smith",
+        "department": "IT",
+        "role": "Network Administrator",
+        "email": "jane.smith@company.com",
+        "personal_email": "jane.smith@yahoo.com",
+        "malicious": true
+    },
+    {
+        "username": "robert.brown",
+        "employee_id": "9003",
+        "name": "Robert Brown",
+        "department": "IT",
+        "role": "System Administrator",
+        "email": "robert.brown@company.com",
+        "personal_email": "robert.brown@outlook.com",
+        "malicious": true
+    }
+]
+
+
+
+Page 4
+----------------------------------------
+File: sme_network_simulation\historical-data-generator\data\external_emails.json
+================================================================================
+
+[
+    {
+        "name": "Client One",
+        "email": "client1@external.com",
+        "good": true
+    },
+    {
+        "name": "Client Two",
+        "email": "client2@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner One",
+        "email": "partner1@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner Two",
+        "email": "partner2@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier One",
+        "email": "supplier1@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier Two",
+        "email": "supplier2@external.com",
+        "good": true
+    },
+    {
+        "name": "Client Three",
+        "email": "client3@external.com",
+        "good": true
+    },
+    {
+        "name": "Client Four",
+        "email": "client4@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner Three",
+        "email": "partner3@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner Four",
+        "email": "partner4@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier Three",
+        "email": "supplier3@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier Four",
+        "email": "supplier4@external.com",
+        "good": true
+    },
+    {
+        "name": "Customer One",
+        "email": "customer1@external.com",
+        "good": true
+    },
+    {
+        "name": "Customer Two",
+        "email": "customer2@external.com",
+        "good": true
+    },
+    {
+        "name": "Vendor One",
+        "email": "vendor1@external.com",
+        "good": true
+    },
+    {
+        "name": "Vendor Two",
+        "email": "vendor2@external.com",
+        "good": true
+    },
+    {
+        "name": "Business One",
+        "email": "business1@external.com",
+        "good": true
+    },
+    {
+        "name": "Business Two",
+        "email": "business2@external.com",
+        "good": true
+    },
+    {
+        "name": "Contact One",
+        "email": "contact1@external.com",
+        "good": true
+    },
+    {
+        "name": "Contact Two",
+        "email": "contact2@external.com",
+        "good": true
+    },
+    {
+        "name": "External User One",
+        "email": "externaluser1@external.com",
+        "good": true
+    },
+    {
+        "name": "External User Two",
+        "email": "externaluser2@external.com",
+        "good": true
+    },
+    {
+        "name": "Associate One",
+        "email": "associate1@external.com",
+        "good": true
+    },
+    {
+        "name": "Associate Two",
+        "email": "associate2@external.com",
+        "good": true
+    },
+    {
+        "name": "Affiliate One",
+        "email": "affiliate1@external.com",
+        "good": true
+    },
+    {
+        "name": "Affiliate Two",
+        "email": "affiliate2@external.com",
+        "good": true
+    },
+    {
+        "name": "Colleague One",
+        "email": "colleague1@external.com",
+        "good": true
+    },
+    {
+        "name": "Colleague Two",
+        "email": "colleague2@external.com",
+        "good": true
+    },
+    {
+        "name": "Friend One",
+        "email": "friend1@external.com",
+        "good": true
+    },
+    {
+        "name": "Friend Two",
+        "email": "friend2@external.com",
+        "good": true
+    },
+    {
+        "name": "Bad User One",
+        "email": "baduser1@external.com",
+        "good": false
+    },
+    {
+        "name": "Bad User Two",
+        "email": "baduser2@external.com",
+        "good": false
+    },
+    {
+        "name": "Malicious Partner",
+        "email": "malicious.partner@external.com",
+        "good": false
+    },
+    {
+        "name": "Suspicious Supplier",
+        "email": "suspicious.supplier@external.com",
+        "good": false
+    }
+]
+
+
+
+Page 5
+----------------------------------------
+File: sme_network_simulation\historical-data-generator\data\internal_emails.json
+================================================================================
+
+[
+    "alice@company.com",
+    "bob@company.com",
+    "carol@company.com",
+    "dave@company.com",
+    "eve@company.com",
+    "frank@company.com",
+    "grace@company.com",
+    "hank@company.com",
+    "ivy@company.com",
+    "jack@company.com",
+    "john.doe@company.com",
+    "jane.smith@company.com",
+    "robert.brown@company.com"
+]
+
+
+
+Page 6
+----------------------------------------
+File: sme_network_simulation\real-traffic-generator\docker-compose.traffic.yml
+==============================================================================
+
+version: '3.7'
+
+services:
+  real-traffic-generator:
+    build: .
+    container_name: real-traffic-generator
+    networks:
+      - sme_network
+
+networks:
+  sme_network:
+    external: true
+
+
+
+
+Page 7
+----------------------------------------
+File: sme_network_simulation\real-traffic-generator\generate_real_traffic.sh
+============================================================================
+
+#!/bin/bash
+
+while true; do
+  curl http://node-app:3000
+  ping -c 4 node-app
+  sleep 5
+done
+
+
+
+Page 8
+----------------------------------------
+File: sme_network_simulation\realtime-log-generator\docker-compose.realtime.yml
+===============================================================================
+
+version: '3.7'
+
+services:
+  realtime-log-generator:
+    build: .
+    container_name: realtime-log-generator
+    volumes:
+      - realtime-logs:/mnt/data
+    networks:
+      - sme_network
+
+networks:
+  sme_network:
+    external: true
+
+volumes:
+  realtime-logs:
+    external: true
+
+
+
+Page 9
+----------------------------------------
+File: sme_network_simulation\server\docker-compose.server.yml
+=============================================================
+
+version: '3.8'
+
+networks:
+  sme_network:
+    driver: bridge
+
+services:
+  elasticsearch:
+    build: ./elasticsearch
+    container_name: server_elasticsearch
+    environment:
+      - node.name=elasticsearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - sme_network
+
+  kibana:
+    build: ./kibana
+    container_name: server_kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://server_elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - sme_network
+
+  wazuh-manager:
+    build: ./wazuh-manager
+    container_name: server_wazuh_manager
+    environment:
+      - ELASTICSEARCH_HOSTS=http://server_elasticsearch:9200
+    ports:
+      - "55000:55000"
+      - "1514:1514/udp"
+      - "1515:1515"
+      - "514:514"
+    depends_on:
+      - elasticsearch
+    networks:
+      - sme_network
+
+  suricata:
+    build: ./suricata
+    container_name: server_suricata
+    volumes:
+      - ./logs:/var/log/suricata
+    cap_add:
+      - NET_ADMIN
+      - SYS_NICE
+    depends_on:
+      - wazuh-manager
+    networks:
+      - sme_network
+
+  filebeat:
+    build: ./filebeat
+    container_name: server_filebeat
+    depends_on:
+      - elasticsearch
+      - wazuh-manager
+      - suricata
+    networks:
+      - sme_network
+
+  packetbeat:
+    build: ./packetbeat
+    container_name: server_packetbeat
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    depends_on:
+      - elasticsearch
+    networks:
+      - sme_network
+
+  node-app:
+    build: ./node-app
+    container_name: server_node_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - sme_network
+
+  mysql:
+    build: ./mysql
+    container_name: server_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: testdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - sme_network
+
+  ftp:
+    build: ./ftp
+    container_name: server_ftp
+    ports:
+      - "21:21"
+    volumes:
+      - ftp-data:/var/ftp
+    networks:
+      - sme_network
+
+  server_smtp:
+    build: ./smtp
+    container_name: server_smtp
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - sme_network
+
+  smb:
+    build: ./smb
+    container_name: server_smb
+    ports:
+      - "1445:445" # Changed port to avoid conflict
+    volumes:
+      - smb-data:/samba/share
+    networks:
+      - sme_network
+
+volumes:
+  esdata:
+    driver: local
+  mysql-data:
+    driver: local
+  ftp-data:
+    driver: local
+  smb-data:
+    driver: local
+
+
+
+Page 10
+----------------------------------------
+File: sme_network_simulation\server\elasticsearch\elasticsearch.yml
+===================================================================
+
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+http.port: 9200
+
+
+
+Page 11
+----------------------------------------
+File: sme_network_simulation\server\filebeat\filebeat.yml
+=========================================================
+
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/*.log
+    - /var/log/suricata/*.log
+    - /var/log/workstation1/*.log
+    - /var/log/workstation2/*.log
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+  protocol: "http"
+  username: "elastic"
+  password: "changeme"
+
+
+
+Page 12
+----------------------------------------
+File: sme_network_simulation\server\ftp\vsftpd.conf
+===================================================
+
+listen=YES
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+xferlog_std_format=YES
+chroot_local_user=YES
+listen_ipv6=NO
+
+pasv_enable=YES
+pasv_min_port=21100
+pasv_max_port=21110
+pasv_address=127.0.0.1
+
+
+
+Page 13
+----------------------------------------
+File: sme_network_simulation\server\kibana\kibana.yml
+=====================================================
+
+server.name: kibana
+server.host: "0.0.0.0"
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+
+
+
+Page 14
+----------------------------------------
+File: sme_network_simulation\server\mysql\my.cnf
+================================================
+
+[mysqld]
+bind-address = 0.0.0.0
+
+
+
+Page 15
+----------------------------------------
+File: sme_network_simulation\server\node-app\app.js
+===================================================
+
+const express = require('express');
+const mysql = require('mysql');
+
+const app = express();
+const port = 3000;
+
+const connection = mysql.createConnection({
+  host: 'mysql',  // Docker service name
+  user: 'root',
+  password: 'password',
+  database: 'testdb'
+});
+
+connection.connect(err => {
+  if (err) {
+    console.error('Error connecting to MySQL:', err);
+    return;
+  }
+  console.log('Connected to MySQL');
+});
+
+app.get('/', (req, res) => {
+  connection.query('SELECT NOW()', (err, results) => {
+    if (err) {
+      res.send('Error querying database');
+      return;
+    }
+    res.send(`Current time: ${results[0]['NOW()']}`);
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Node.js app listening at http://localhost:${port}`);
+});
+
+
+Page 16
+----------------------------------------
+File: sme_network_simulation\server\node-app\package.json
+=========================================================
+
+{
+    "name": "node-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mysql": "^2.18.1"
+    }
+  }
+  
+
+
+Page 17
+----------------------------------------
+File: sme_network_simulation\server\packetbeat\packetbeat.yml
+=============================================================
+
+packetbeat.interfaces.device: any
+
+packetbeat.flows:
+  enabled: false
+
+packetbeat.protocols:
+- type: icmp
+  enabled: true
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  index: "packetbeat-%{+yyyy.MM.dd}"
+
+
+
+Page 18
+----------------------------------------
+File: sme_network_simulation\server\smb\smb.conf
+================================================
+
+[global]
+   workgroup = WORKGROUP
+   server string = Samba Server
+   security = user
+   map to guest = Bad User
+   dns proxy = no
+
+[share]
+   path = /samba/share
+   browsable = yes
+   writable = yes
+   guest ok = yes
+   read only = no
+   create mask = 0755
+
+
+
+Page 19
+----------------------------------------
+File: sme_network_simulation\server\suricata\suricata.yml
+=========================================================
+
+# Suricata configuration file
+
+
+
+Page 20
+----------------------------------------
+File: sme_network_simulation\server\wazuh-manager\wazuh-manager.yml
+===================================================================
+
+# Custom Wazuh Manager configuration
+<ossec_config>
+  <global>
+    <email_notification>no</email_notification>
+    <white_list>127.0.0.1</white_list>
+  </global>
+  <logging>
+    <log_format>json</log_format>
+  </logging>
+  <alerts>
+    <jsonout_output>yes</jsonout_output>
+  </alerts>
+</ossec_config>
+
+
+Page 21
+----------------------------------------

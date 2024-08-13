@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  real-traffic-generator:
+    build: .
+    container_name: real-traffic-generator
+    networks:
+      - sme_network
+
+networks:
+  sme_network:
+    external: true
+

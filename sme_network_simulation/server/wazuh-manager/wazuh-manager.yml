@@ -1,0 +1,13 @@
+# Custom Wazuh Manager configuration
+<ossec_config>
+  <global>
+    <email_notification>no</email_notification>
+    <white_list>127.0.0.1</white_list>
+  </global>
+  <logging>
+    <log_format>json</log_format>
+  </logging>
+  <alerts>
+    <jsonout_output>yes</jsonout_output>
+  </alerts>
+</ossec_config>

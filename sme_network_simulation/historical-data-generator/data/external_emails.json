@@ -1,0 +1,172 @@
+[
+    {
+        "name": "Client One",
+        "email": "client1@external.com",
+        "good": true
+    },
+    {
+        "name": "Client Two",
+        "email": "client2@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner One",
+        "email": "partner1@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner Two",
+        "email": "partner2@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier One",
+        "email": "supplier1@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier Two",
+        "email": "supplier2@external.com",
+        "good": true
+    },
+    {
+        "name": "Client Three",
+        "email": "client3@external.com",
+        "good": true
+    },
+    {
+        "name": "Client Four",
+        "email": "client4@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner Three",
+        "email": "partner3@external.com",
+        "good": true
+    },
+    {
+        "name": "Partner Four",
+        "email": "partner4@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier Three",
+        "email": "supplier3@external.com",
+        "good": true
+    },
+    {
+        "name": "Supplier Four",
+        "email": "supplier4@external.com",
+        "good": true
+    },
+    {
+        "name": "Customer One",
+        "email": "customer1@external.com",
+        "good": true
+    },
+    {
+        "name": "Customer Two",
+        "email": "customer2@external.com",
+        "good": true
+    },
+    {
+        "name": "Vendor One",
+        "email": "vendor1@external.com",
+        "good": true
+    },
+    {
+        "name": "Vendor Two",
+        "email": "vendor2@external.com",
+        "good": true
+    },
+    {
+        "name": "Business One",
+        "email": "business1@external.com",
+        "good": true
+    },
+    {
+        "name": "Business Two",
+        "email": "business2@external.com",
+        "good": true
+    },
+    {
+        "name": "Contact One",
+        "email": "contact1@external.com",
+        "good": true
+    },
+    {
+        "name": "Contact Two",
+        "email": "contact2@external.com",
+        "good": true
+    },
+    {
+        "name": "External User One",
+        "email": "externaluser1@external.com",
+        "good": true
+    },
+    {
+        "name": "External User Two",
+        "email": "externaluser2@external.com",
+        "good": true
+    },
+    {
+        "name": "Associate One",
+        "email": "associate1@external.com",
+        "good": true
+    },
+    {
+        "name": "Associate Two",
+        "email": "associate2@external.com",
+        "good": true
+    },
+    {
+        "name": "Affiliate One",
+        "email": "affiliate1@external.com",
+        "good": true
+    },
+    {
+        "name": "Affiliate Two",
+        "email": "affiliate2@external.com",
+        "good": true
+    },
+    {
+        "name": "Colleague One",
+        "email": "colleague1@external.com",
+        "good": true
+    },
+    {
+        "name": "Colleague Two",
+        "email": "colleague2@external.com",
+        "good": true
+    },
+    {
+        "name": "Friend One",
+        "email": "friend1@external.com",
+        "good": true
+    },
+    {
+        "name": "Friend Two",
+        "email": "friend2@external.com",
+        "good": true
+    },
+    {
+        "name": "Bad User One",
+        "email": "baduser1@external.com",
+        "good": false
+    },
+    {
+        "name": "Bad User Two",
+        "email": "baduser2@external.com",
+        "good": false
+    },
+    {
+        "name": "Malicious Partner",
+        "email": "malicious.partner@external.com",
+        "good": false
+    },
+    {
+        "name": "Suspicious Supplier",
+        "email": "suspicious.supplier@external.com",
+        "good": false
+    }
+]

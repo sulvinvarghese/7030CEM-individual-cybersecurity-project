@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  historical-data-generator:
+    build: .
+    container_name: historical-data-generator
+    volumes:
+      - historical-data:/mnt/data
+    networks:
+      - sme_network
+
+networks:
+  sme_network:
+    external: true
+
+volumes:
+  historical-data:
+    external: true

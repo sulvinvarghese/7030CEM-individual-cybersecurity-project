@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  realtime-log-generator:
+    build: .
+    container_name: realtime-log-generator
+    volumes:
+      - realtime-logs:/mnt/data
+    networks:
+      - sme_network
+
+networks:
+  sme_network:
+    external: true
+
+volumes:
+  realtime-logs:
+    external: true

@@ -1,0 +1,151 @@
+version: '3.8'
+
+networks:
+  sme_network:
+    driver: bridge
+
+services:
+  elasticsearch:
+    build: ./elasticsearch
+    container_name: server_elasticsearch
+    environment:
+      - node.name=elasticsearch
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - sme_network
+
+  kibana:
+    build: ./kibana
+    container_name: server_kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://server_elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - sme_network
+
+  wazuh-manager:
+    build: ./wazuh-manager
+    container_name: server_wazuh_manager
+    environment:
+      - ELASTICSEARCH_HOSTS=http://server_elasticsearch:9200
+    ports:
+      - "55000:55000"
+      - "1514:1514/udp"
+      - "1515:1515"
+      - "514:514"
+    depends_on:
+      - elasticsearch
+    networks:
+      - sme_network
+
+  suricata:
+    build: ./suricata
+    container_name: server_suricata
+    volumes:
+      - ./logs:/var/log/suricata
+      - ./suricata/suricata.yaml:/etc/suricata/suricata.yaml
+    command: ["/usr/bin/suricata", "-c", "/etc/suricata/suricata.yaml", "-i", "eth0"]
+    cap_add:
+      - NET_ADMIN
+      - SYS_NICE
+    depends_on:
+      - wazuh-manager
+    networks:
+      - sme_network
+
+  filebeat:
+    build: ./filebeat
+    container_name: server_filebeat
+    depends_on:
+      - elasticsearch
+      - wazuh-manager
+      - suricata
+    networks:
+      - sme_network
+
+  packetbeat:
+    build: ./packetbeat
+    container_name: server_packetbeat
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    depends_on:
+      - elasticsearch
+    networks:
+      - sme_network
+
+  node-app:
+    build: ./node-app
+    container_name: server_node_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - sme_network
+
+  mysql:
+    build: ./mysql
+    container_name: server_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: testdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - sme_network
+
+  ftp:
+    build: ./ftp
+    container_name: server_ftp
+    ports:
+      - "21:21"
+    volumes:
+      - ftp-data:/var/ftp
+    networks:
+      - sme_network
+
+  server_smtp:
+    build: ./smtp
+    container_name: server_smtp
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - sme_network
+
+  smb:
+    build: ./smb
+    container_name: server_smb
+    ports:
+      - "1445:445" # Changed port to avoid conflict
+    volumes:
+      - smb-data:/samba/share
+    networks:
+      - sme_network
+
+volumes:
+  esdata:
+    driver: local
+  mysql-data:
+    driver: local
+  ftp-data:
+    driver: local
+  smb-data:
+    driver: local

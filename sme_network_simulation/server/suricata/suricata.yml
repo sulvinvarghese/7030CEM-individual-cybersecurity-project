@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+# Suricata configuration file
+
+# Runmode configuration
+runmode: autofp
+
+# Default logging directory
+default-log-dir: /var/log/suricata
+
+# Specify the interface you want Suricata to listen on
+af-packet:
+  - interface: eth0
+
+# Configure the home net
+vars:
+  address-groups:
+    HOME_NET: "[192.168.0.0/24]"
+
+# Logging configuration
+logging:
+  default-log-level: info
+  outputs:
+    - console:
+        enabled: yes
+        level: info
+    - file:
+        enabled: yes
+        level: info
+        filename: /var/log/suricata/suricata.log
+
+# Specify rule files
+rule-files:
+  - /etc/suricata/rules/suricata.rules
+
+# Enable outputs
+outputs:
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: /var/log/suricata/eve.json
+      types:
+        - alert:
+            payload: yes
+            payload-printable: yes
+            packet: yes
+        - http:
+            extended: yes
+        - dns:
+            query: yes
+            answer: yes
+        - tls:
+            extended: yes
+        - files:
+            force-magic: yes
+        - drop:
+            alerts-only: yes
+  - alert:
+      enabled: yes
+      filename: /var/log/suricata/fast.log
